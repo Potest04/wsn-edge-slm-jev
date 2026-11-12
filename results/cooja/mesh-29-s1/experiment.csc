@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='utf-8'?>
+<simconf>
+  <simulation>
+    <title>WSN edge mesh / seed 29 / stride 1</title>
+    <randomseed>29</randomseed>
+    <motedelay_us>1000000</motedelay_us>
+    <radiomedium>org.contikios.cooja.radiomediums.UDGM<transmitting_range>48</transmitting_range>
+      <interference_range>75</interference_range>
+      <success_ratio_tx>1.0</success_ratio_tx>
+      <success_ratio_rx>0.93</success_ratio_rx>
+    </radiomedium>
+    <events>
+      <logoutput>40000</logoutput>
+    </events>
+    <motetype>org.contikios.cooja.contikimote.ContikiMoteType<identifier>edge-root</identifier>
+      <description>edge-root</description>
+      <source>[CONFIG_DIR]/firmware/edge-root.c</source>
+      <commands>$(MAKE) -j4 edge-root.cooja TARGET=cooja WSN_REPORT_STRIDE=1</commands>
+      <moteinterface>org.contikios.cooja.interfaces.Position</moteinterface>
+      <moteinterface>org.contikios.cooja.contikimote.interfaces.ContikiMoteID</moteinterface>
+      <moteinterface>org.contikios.cooja.contikimote.interfaces.ContikiRS232</moteinterface>
+      <moteinterface>org.contikios.cooja.contikimote.interfaces.ContikiIPAddress</moteinterface>
+      <moteinterface>org.contikios.cooja.contikimote.interfaces.ContikiRadio</moteinterface>
+      <moteinterface>org.contikios.cooja.contikimote.interfaces.ContikiClock</moteinterface>
+    </motetype>
+    <motetype>org.contikios.cooja.contikimote.ContikiMoteType<identifier>sensor</identifier>
+      <description>sensor</description>
+      <source>[CONFIG_DIR]/firmware/sensor.c</source>
+      <commands>$(MAKE) -j4 sensor.cooja TARGET=cooja WSN_REPORT_STRIDE=1</commands>
+      <moteinterface>org.contikios.cooja.interfaces.Position</moteinterface>
+      <moteinterface>org.contikios.cooja.contikimote.interfaces.ContikiMoteID</moteinterface>
+      <moteinterface>org.contikios.cooja.contikimote.interfaces.ContikiRS232</moteinterface>
+      <moteinterface>org.contikios.cooja.contikimote.interfaces.ContikiIPAddress</moteinterface>
+      <moteinterface>org.contikios.cooja.contikimote.interfaces.ContikiRadio</moteinterface>
+      <moteinterface>org.contikios.cooja.contikimote.interfaces.ContikiClock</moteinterface>
+    </motetype>
+    <mote>
+      <interface_config>org.contikios.cooja.interfaces.Position<x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </interface_config>
+      <interface_config>org.contikios.cooja.contikimote.interfaces.ContikiMoteID<id>1</id>
+      </interface_config>
+      <motetype_identifier>edge-root</motetype_identifier>
+    </mote>
+    <mote>
+      <interface_config>org.contikios.cooja.interfaces.Position<x>28</x>
+        <y>10</y>
+        <z>0</z>
+      </interface_config>
+      <interface_config>org.contikios.cooja.contikimote.interfaces.ContikiMoteID<id>2</id>
+      </interface_config>
+      <motetype_identifier>sensor</motetype_identifier>
+    </mote>
+    <mote>
+      <interface_config>org.contikios.cooja.interfaces.Position<x>22</x>
+        <y>-25</y>
+        <z>0</z>
+      </interface_config>
+      <interface_config>org.contikios.cooja.contikimote.interfaces.ContikiMoteID<id>3</id>
+      </interface_config>
+      <motetype_identifier>sensor</motetype_identifier>
+    </mote>
+    <mote>
+      <interface_config>org.contikios.cooja.interfaces.Position<x>56</x>
+        <y>-4</y>
+        <z>0</z>
+      </interface_config>
+      <interface_config>org.contikios.cooja.contikimote.interfaces.ContikiMoteID<id>4</id>
+      </interface_config>
+      <motetype_identifier>sensor</motetype_identifier>
+    </mote>
+    <mote>
+      <interface_config>org.contikios.cooja.interfaces.Position<x>56</x>
+        <y>29</y>
+        <z>0</z>
+      </interface_config>
+      <interface_config>org.contikios.cooja.contikimote.interfaces.ContikiMoteID<id>5</id>
+      </interface_config>
+      <motetype_identifier>sensor</motetype_identifier>
+    </mote>
+    <mote>
+      <interface_config>org.contikios.cooja.interfaces.Position<x>80</x>
+        <y>-23</y>
+        <z>0</z>
+      </interface_config>
+      <interface_config>org.contikios.cooja.contikimote.interfaces.ContikiMoteID<id>6</id>
+      </interface_config>
+      <motetype_identifier>sensor</motetype_identifier>
+    </mote>
+  </simulation>
+  <plugin>org.contikios.cooja.plugins.ScriptRunner<plugin_config>
+      <script>TIMEOUT(240000, log.testOK());
+while (true) {
+  YIELD();
+  if (msg.indexOf("WSN,") &gt;= 0) {
+    log.log(time + " ID:" + id + " " + msg + "\n");
+  }
+}
+</script>
+      <active>true</active>
+    </plugin_config>
+  </plugin>
+</simconf>

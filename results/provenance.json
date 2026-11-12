@@ -1,0 +1,16 @@
+{
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "intel_sha256": "d99288c8f406ca6604d359ceaa0d8adfffa79e7095061a1e27dc4399f48c7225",
+  "intel_slice": [
+    "2004-03-01T12:00:00",
+    "2004-03-01T12:10:00"
+  ],
+  "runtime": "version: 0.9.0-dev (build 12318, commit 7021f7e09)\nbuilt with GNU 11.4.0 for Linux x86_64",
+  "threads": 4,
+  "host": "x86_64",
+  "replay_wall_s": 79.13914051200845,
+  "model_process_peak_rss_kib": 608128,
+  "unique_inference_requests": 173,
+  "unique_inference_failures": 0,
+  "measured_package_energy_j": null
+}

@@ -1,0 +1,13 @@
+CONTIKI_PROJECT = edge-root sensor
+all: $(CONTIKI_PROJECT)
+
+CONTIKI ?= ../contiki-ng
+MAKE_ROUTING = MAKE_ROUTING_RPL_LITE
+MAKE_MAC = MAKE_MAC_CSMA
+WSN_REPORT_STRIDE ?= 1
+CFLAGS += -DWSN_REPORT_STRIDE=$(WSN_REPORT_STRIDE)
+PROJECT_SOURCEFILES += telemetry.c
+
+include $(CONTIKI)/Makefile.dir-variables
+MODULES += $(CONTIKI_NG_APP_LAYER_DIR)/coap
+include $(CONTIKI)/Makefile.include

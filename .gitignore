@@ -1,0 +1,10 @@
+.cache/
+__pycache__/
+*.pyc
+build/
+*.cooja
+*.sky
+*.map
+.DS_Store
+cooja.log
+llama-server.log

@@ -1,0 +1,26 @@
+{
+  "topology": "bottleneck",
+  "seed": 29,
+  "rx_ratio": 0.93,
+  "stride": 1,
+  "generated": 239,
+  "attempted": 239,
+  "received": 239,
+  "duplicates": 0,
+  "source_datagram_bytes": 7170,
+  "sent_by_node": {
+    "2": 49,
+    "4": 44,
+    "3": 47,
+    "5": 50,
+    "6": 49
+  },
+  "hard_alerts_generated": 6,
+  "hard_alerts_received": 6,
+  "multihop_source_ids": [
+    3,
+    4,
+    5,
+    6
+  ]
+}

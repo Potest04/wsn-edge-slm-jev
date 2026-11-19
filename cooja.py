@@ -28,7 +28,7 @@ MARKER = re.compile(r"^(\d+)\s+ID:(\d+)\s+.*?WSN,([A-Z]+),([\d,]+)")
 TRACE_FIELDS = ("node", "seq", "sample_s", "arrival_s", "temperature_c", "humidity_pct", "zone")
 
 
-def config(path, topology, seed, rx_ratio, stride):
+def config(path, topology, seed, rx_ratio, stride, *, script=None, live_burst=False):
     root = ET.Element("simconf")
 
     def add(parent, key, value=None):
@@ -52,7 +52,10 @@ def config(path, topology, seed, rx_ratio, stride):
         add(mote_type, "identifier", app)
         add(mote_type, "description", app)
         add(mote_type, "source", f"[CONFIG_DIR]/firmware/{app}.c")
-        add(mote_type, "commands", f"$(MAKE) -j4 {app}.cooja TARGET=cooja WSN_REPORT_STRIDE={stride}")
+        command = f"$(MAKE) -j4 {app}.cooja TARGET=cooja WSN_REPORT_STRIDE={stride}"
+        if live_burst:
+            command += " WSN_LIVE_BURST=1"
+        add(mote_type, "commands", command)
         for interface in INTERFACES:
             add(mote_type, "moteinterface", f"org.contikios.cooja.{interface}")
     for node, (x, y) in enumerate(TOPOLOGIES[topology], start=1):
@@ -65,8 +68,8 @@ def config(path, topology, seed, rx_ratio, stride):
         add(mote_id, "id", node)
         add(mote, "motetype_identifier", "edge-root" if node == 1 else "sensor")
     plugin = add(root, "plugin", "org.contikios.cooja.plugins.ScriptRunner")
-    script = add(plugin, "plugin_config")
-    add(script, "script", """TIMEOUT(240000, log.testOK());
+    plugin_config = add(plugin, "plugin_config")
+    add(plugin_config, "script", script if script is not None else """TIMEOUT(240000, log.testOK());
 while (true) {
   YIELD();
   if (msg.indexOf("WSN,") >= 0) {
@@ -74,7 +77,7 @@ while (true) {
   }
 }
 """)
-    add(script, "active", "true")
+    add(plugin_config, "active", "true")
     ET.indent(root)
     ET.ElementTree(root).write(path, encoding="utf-8", xml_declaration=True)
 

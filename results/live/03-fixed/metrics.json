@@ -1,0 +1,81 @@
+{
+  "policy": "fixed",
+  "seed": 17,
+  "trace_sha256": "1571182702c009b9ba272d38a221d912cd40909e8dcc1458f69cc5de7d6f2201",
+  "generated": 240,
+  "attempted": 240,
+  "ingress": 240,
+  "multihop_source_ids": [
+    4,
+    5,
+    6
+  ],
+  "generation_wall_span_s": 12.528,
+  "generation_sim_span_s": 12.5,
+  "datagrams": 20,
+  "udp_payload_bytes": 646,
+  "ipv6_udp_bytes": 1606,
+  "summaries": 14,
+  "window_count": 14,
+  "routine_samples_at_receiver": 234,
+  "peak_readings_per_2s_window": 40,
+  "summary_max_delay_ms": 1.641,
+  "alerts_on_time": 6,
+  "alerts": [
+    {
+      "node": 2,
+      "seq": 8,
+      "gateway_to_receiver_ms": 0.929,
+      "source_to_receiver_ms": 156.445,
+      "simulated_radio_ms": 154.304,
+      "received_during_inference": false
+    },
+    {
+      "node": 2,
+      "seq": 16,
+      "gateway_to_receiver_ms": 0.825,
+      "source_to_receiver_ms": 37.219,
+      "simulated_radio_ms": 35.304,
+      "received_during_inference": false
+    },
+    {
+      "node": 2,
+      "seq": 24,
+      "gateway_to_receiver_ms": 0.964,
+      "source_to_receiver_ms": 22.402,
+      "simulated_radio_ms": 19.304,
+      "received_during_inference": false
+    },
+    {
+      "node": 2,
+      "seq": 32,
+      "gateway_to_receiver_ms": 0.818,
+      "source_to_receiver_ms": 42.46,
+      "simulated_radio_ms": 39.304,
+      "received_during_inference": false
+    },
+    {
+      "node": 2,
+      "seq": 40,
+      "gateway_to_receiver_ms": 0.842,
+      "source_to_receiver_ms": 25.812,
+      "simulated_radio_ms": 23.304,
+      "received_during_inference": false
+    },
+    {
+      "node": 6,
+      "seq": 36,
+      "gateway_to_receiver_ms": 0.878,
+      "source_to_receiver_ms": 83.905,
+      "simulated_radio_ms": 80.592,
+      "received_during_inference": false
+    }
+  ],
+  "alert_gateway_to_receiver_median_ms": 0.86,
+  "alert_source_to_receiver_max_ms": 156.445,
+  "inference_requests": 0,
+  "inference_fallbacks": 0,
+  "inference_median_ms": null,
+  "routine_arrivals_during_inference": 0,
+  "late_arrivals": 0
+}

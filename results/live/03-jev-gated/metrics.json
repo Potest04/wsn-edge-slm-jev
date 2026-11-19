@@ -1,0 +1,81 @@
+{
+  "policy": "jev-gated",
+  "seed": 17,
+  "trace_sha256": "1571182702c009b9ba272d38a221d912cd40909e8dcc1458f69cc5de7d6f2201",
+  "generated": 240,
+  "attempted": 240,
+  "ingress": 240,
+  "multihop_source_ids": [
+    4,
+    5,
+    6
+  ],
+  "generation_wall_span_s": 12.514,
+  "generation_sim_span_s": 12.5,
+  "datagrams": 27,
+  "udp_payload_bytes": 741,
+  "ipv6_udp_bytes": 2037,
+  "summaries": 12,
+  "window_count": 14,
+  "routine_samples_at_receiver": 234,
+  "peak_readings_per_2s_window": 40,
+  "summary_max_delay_ms": 823.964,
+  "alerts_on_time": 6,
+  "alerts": [
+    {
+      "node": 2,
+      "seq": 8,
+      "gateway_to_receiver_ms": 1.919,
+      "source_to_receiver_ms": 160.311,
+      "simulated_radio_ms": 154.304,
+      "received_during_inference": true
+    },
+    {
+      "node": 2,
+      "seq": 16,
+      "gateway_to_receiver_ms": 0.857,
+      "source_to_receiver_ms": 37.521,
+      "simulated_radio_ms": 35.304,
+      "received_during_inference": true
+    },
+    {
+      "node": 2,
+      "seq": 24,
+      "gateway_to_receiver_ms": 1.113,
+      "source_to_receiver_ms": 22.41,
+      "simulated_radio_ms": 19.304,
+      "received_during_inference": true
+    },
+    {
+      "node": 2,
+      "seq": 32,
+      "gateway_to_receiver_ms": 1.72,
+      "source_to_receiver_ms": 42.955,
+      "simulated_radio_ms": 39.304,
+      "received_during_inference": true
+    },
+    {
+      "node": 2,
+      "seq": 40,
+      "gateway_to_receiver_ms": 0.999,
+      "source_to_receiver_ms": 25.162,
+      "simulated_radio_ms": 23.304,
+      "received_during_inference": true
+    },
+    {
+      "node": 6,
+      "seq": 36,
+      "gateway_to_receiver_ms": 1.203,
+      "source_to_receiver_ms": 83.749,
+      "simulated_radio_ms": 80.592,
+      "received_during_inference": false
+    }
+  ],
+  "alert_gateway_to_receiver_median_ms": 1.158,
+  "alert_source_to_receiver_max_ms": 160.311,
+  "inference_requests": 9,
+  "inference_fallbacks": 0,
+  "inference_median_ms": 362.386,
+  "routine_arrivals_during_inference": 50,
+  "late_arrivals": 0
+}

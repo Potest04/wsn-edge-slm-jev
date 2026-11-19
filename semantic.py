@@ -20,10 +20,11 @@ Examples: hall 24 C max and 55 percent RH max -> 0; lab 28 C max and
 
 
 class LocalScorer:
-    def __init__(self, port, audit_path, timeout=4):
+    def __init__(self, port, audit_path, timeout=4, *, capture_timing=False):
         self.url = f"http://127.0.0.1:{port}/completion"
         self.audit_path = audit_path
         self.timeout = timeout
+        self.capture_timing = capture_timing
         self.records = {}
         if audit_path.exists():
             for line in audit_path.read_text(encoding="utf-8").splitlines():
@@ -41,7 +42,7 @@ class LocalScorer:
             "prompt": prompt, "grammar": "root ::= [012]", "n_predict": 3,
             "temperature": 0, "seed": 1927, "cache_prompt": True,
         }).encode(), headers={"Content-Type": "application/json"})
-        started = time.perf_counter()
+        started_ns = time.monotonic_ns()
         value, status, error = None, "fallback", None
         try:
             with urlopen(request, timeout=self.timeout) as response:
@@ -52,11 +53,14 @@ class LocalScorer:
                 error = "invalid scalar"
         except (URLError, OSError, ValueError, KeyError, AttributeError, TypeError) as exc:
             error = type(exc).__name__
+        finished_ns = time.monotonic_ns()
         entry = {
             "cache_key": cache_key, "case_id": case_id, "features": features,
             "status": status, "value": value, "error": error,
-            "latency_ms": round((time.perf_counter() - started) * 1000, 3),
+            "latency_ms": round((finished_ns - started_ns) / 1e6, 3),
         }
+        if self.capture_timing:
+            entry.update(started_ns=started_ns, finished_ns=finished_ns)
         with self.audit_path.open("a", encoding="utf-8") as handle:
             handle.write(json.dumps(entry, sort_keys=True) + "\n")
         self.records[cache_key] = entry

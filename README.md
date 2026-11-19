@@ -6,6 +6,8 @@ Computer Networks II, topic 3. **Σχεδιασμός και Υλοποίηση 
 
 The [first live experiment](docs/live-experiment.md) connects running Cooja motes to a Python gateway and a separate IPv6 UDP receiver on the same Linux host.
 
+The [context-aware live comparison](docs/context-experiment.md) adds raw forwarding, the numeric rule, and three ways of supplying a time-limited operator instruction.
+
 Five Contiki-NG environmental motes send CoAP NON POST telemetry over IPv6/RPL-Lite to a Cooja collector. The gateway replays the collector trace with a bounded TTL cache, window statistics, and an immediate hard-alert path. Qwen2.5-0.5B-Instruct assigns a semantic value to observed telemetry windows, and JEV selects local retention, an uplink summary, or raw uplink. Every gateway policy sees the same arrival timestamps and generated reference stream for a paired run.
 
 Across nine paired Cooja traces, gated JEV reduced modeled backhaul bytes by 85.2% and delivered all 54 hard alerts by the two-second deadline. Fixed aggregation reduced bytes by 88.3% and provided higher cloud-window coverage. The small model overpredicted criticality and gated JEV made the same decisions as heuristic JEV at the default cost weight. The report includes the raw-detail and cache-pressure trade-offs.

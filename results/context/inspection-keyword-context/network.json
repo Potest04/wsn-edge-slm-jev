@@ -1,0 +1,25 @@
+{
+  "topology": "mesh",
+  "seed": 17,
+  "rx_ratio": 1.0,
+  "stride": 1,
+  "generated": 240,
+  "attempted": 240,
+  "received": 240,
+  "duplicates": 0,
+  "source_datagram_bytes": 7200,
+  "sent_by_node": {
+    "5": 48,
+    "2": 48,
+    "3": 48,
+    "6": 48,
+    "4": 48
+  },
+  "hard_alerts_generated": 6,
+  "hard_alerts_received": 6,
+  "multihop_source_ids": [
+    4,
+    5,
+    6
+  ]
+}

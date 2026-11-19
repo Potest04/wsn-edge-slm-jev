@@ -1,0 +1,10 @@
+{
+  "seed": 17,
+  "contiki": "4ccd1a3b9e767f168d12ec3df187fe6b7dc736b5",
+  "cooja": "fabff3ee41eeeb6f3de7bd11f7c9cdf0a7d7dfc4",
+  "model": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "notes": "cf0331ca4d2c6e4102df55ce41ffdf602775a47d98baa21ca01975e354b767c3",
+  "model_runtime": "version: 0.9.0-dev (build 12318, commit 7021f7e09)\nbuilt with GNU 11.4.0 for Linux x86_64",
+  "model_threads": 4,
+  "profile_effective_sim_ms": 80000
+}

@@ -1,0 +1,302 @@
+[
+  {
+    "id": "warm-up",
+    "expected": {
+      "zone": "lab",
+      "action": "summary",
+      "duration_s": 6
+    },
+    "keyword": {
+      "zone": "lab",
+      "action": "summary",
+      "duration_s": 6
+    },
+    "slm": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 6
+    },
+    "keyword_exact": true,
+    "slm_exact": false,
+    "latency_ms": 1265.591,
+    "response": "{\"zone\":\"lab\",\"action\":\"raw\",\"seconds\":6}",
+    "error": null
+  },
+  {
+    "id": "inspection",
+    "expected": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 6
+    },
+    "keyword": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 6
+    },
+    "slm": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 6
+    },
+    "keyword_exact": true,
+    "slm_exact": true,
+    "latency_ms": 468.797,
+    "response": "{\"zone\":\"lab\",\"action\":\"raw\",\"seconds\":6}",
+    "error": null
+  },
+  {
+    "id": "hall-review",
+    "expected": {
+      "zone": "hall",
+      "action": "raw",
+      "duration_s": 8
+    },
+    "keyword": {
+      "zone": "hall",
+      "action": "raw",
+      "duration_s": 8
+    },
+    "slm": {
+      "zone": "hall",
+      "action": "raw",
+      "duration_s": 8
+    },
+    "keyword_exact": true,
+    "slm_exact": true,
+    "latency_ms": 414.223,
+    "response": "{\"zone\":\"hall\",\"action\":\"raw\",\"seconds\":8}",
+    "error": null
+  },
+  {
+    "id": "lab-dashboard",
+    "expected": {
+      "zone": "lab",
+      "action": "summary",
+      "duration_s": 10
+    },
+    "keyword": null,
+    "slm": {
+      "zone": "lab",
+      "action": "summary",
+      "duration_s": 10
+    },
+    "keyword_exact": false,
+    "slm_exact": true,
+    "latency_ms": 427.596,
+    "response": "{\"zone\":\"lab\",\"action\":\"summary\",\"seconds\":10}",
+    "error": null
+  },
+  {
+    "id": "hall-plain",
+    "expected": {
+      "zone": "hall",
+      "action": "summary",
+      "duration_s": 4
+    },
+    "keyword": {
+      "zone": "hall",
+      "action": "summary",
+      "duration_s": 4
+    },
+    "slm": {
+      "zone": "hall",
+      "action": "summary",
+      "duration_s": 4
+    },
+    "keyword_exact": true,
+    "slm_exact": true,
+    "latency_ms": 432.464,
+    "response": "{\"zone\":\"hall\",\"action\":\"summary\",\"seconds\":4}",
+    "error": null
+  },
+  {
+    "id": "sample-trace",
+    "expected": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 12
+    },
+    "keyword": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 12
+    },
+    "slm": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 12
+    },
+    "keyword_exact": true,
+    "slm_exact": true,
+    "latency_ms": 557.058,
+    "response": "{\"zone\":\"lab\",\"action\":\"raw\",\"seconds\":12}",
+    "error": null
+  },
+  {
+    "id": "averages-instead",
+    "expected": {
+      "zone": "hall",
+      "action": "summary",
+      "duration_s": 2
+    },
+    "keyword": null,
+    "slm": {
+      "zone": "hall",
+      "action": "summary",
+      "duration_s": 2
+    },
+    "keyword_exact": false,
+    "slm_exact": true,
+    "latency_ms": 465.489,
+    "response": "{\"zone\":\"hall\",\"action\":\"summary\",\"seconds\":2}",
+    "error": null
+  },
+  {
+    "id": "audit-originals",
+    "expected": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 8
+    },
+    "keyword": null,
+    "slm": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 8
+    },
+    "keyword_exact": false,
+    "slm_exact": true,
+    "latency_ms": 485.588,
+    "response": "{\"zone\":\"lab\",\"action\":\"raw\",\"seconds\":8}",
+    "error": null
+  },
+  {
+    "id": "hall-ramp",
+    "expected": {
+      "zone": "hall",
+      "action": "summary",
+      "duration_s": 6
+    },
+    "keyword": {
+      "zone": "hall",
+      "action": "summary",
+      "duration_s": 6
+    },
+    "slm": {
+      "zone": "hall",
+      "action": "summary",
+      "duration_s": 6
+    },
+    "keyword_exact": true,
+    "slm_exact": true,
+    "latency_ms": 429.646,
+    "response": "{\"zone\":\"hall\",\"action\":\"summary\",\"seconds\":6}",
+    "error": null
+  },
+  {
+    "id": "hall-missing-duration",
+    "expected": null,
+    "keyword": null,
+    "slm": {
+      "zone": "hall",
+      "action": "raw",
+      "duration_s": 12
+    },
+    "keyword_exact": true,
+    "slm_exact": false,
+    "latency_ms": 507.946,
+    "response": "{\"zone\":\"hall\",\"action\":\"raw\",\"seconds\":12}",
+    "error": null
+  },
+  {
+    "id": "inspection-log",
+    "expected": null,
+    "keyword": null,
+    "slm": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 6
+    },
+    "keyword_exact": true,
+    "slm_exact": false,
+    "latency_ms": 493.031,
+    "response": "{\"zone\":\"lab\",\"action\":\"raw\",\"seconds\":6}",
+    "error": null
+  },
+  {
+    "id": "missing-zone",
+    "expected": null,
+    "keyword": null,
+    "slm": {
+      "zone": "hall",
+      "action": "summary",
+      "duration_s": 6
+    },
+    "keyword_exact": true,
+    "slm_exact": false,
+    "latency_ms": 450.732,
+    "response": "{\"zone\":\"hall\",\"action\":\"summary\",\"seconds\":6}",
+    "error": null
+  },
+  {
+    "id": "two-zones",
+    "expected": null,
+    "keyword": null,
+    "slm": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 6
+    },
+    "keyword_exact": true,
+    "slm_exact": false,
+    "latency_ms": 447.307,
+    "response": "{\"zone\":\"lab\",\"action\":\"raw\",\"seconds\":6}",
+    "error": null
+  },
+  {
+    "id": "long-hold",
+    "expected": null,
+    "keyword": null,
+    "slm": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 6
+    },
+    "keyword_exact": true,
+    "slm_exact": false,
+    "latency_ms": 438.627,
+    "response": "{\"zone\":\"lab\",\"action\":\"raw\",\"seconds\":6}",
+    "error": null
+  },
+  {
+    "id": "no-action",
+    "expected": null,
+    "keyword": null,
+    "slm": {
+      "zone": "hall",
+      "action": "summary",
+      "duration_s": 6
+    },
+    "keyword_exact": true,
+    "slm_exact": false,
+    "latency_ms": 393.339,
+    "response": "{\"zone\":\"hall\",\"action\":\"summary\",\"seconds\":6}",
+    "error": null
+  },
+  {
+    "id": "ambiguous",
+    "expected": null,
+    "keyword": null,
+    "slm": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 4
+    },
+    "keyword_exact": true,
+    "slm_exact": false,
+    "latency_ms": 448.887,
+    "response": "{\"zone\":\"lab\",\"action\":\"raw\",\"seconds\":4}",
+    "error": null
+  }
+]

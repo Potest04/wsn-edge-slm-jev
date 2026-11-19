@@ -1,0 +1,18 @@
+[
+  {"id":"warm-up","live":true,"text":"Lab commissioning is underway. The temperature climb is expected. For the next six seconds give the remote team a rollup of the lab readings.","expected":{"zone":"lab","action":"summary","seconds":6}},
+  {"id":"inspection","live":true,"text":"Maintenance just cleared the lab. For the next six seconds the investigator needs to see each measurement with its original timestamp.","expected":{"zone":"lab","action":"raw","seconds":6}},
+  {"id":"hall-review","text":"Retain the hall's individual readings for eight seconds so the shift lead can examine the excursion.","expected":{"zone":"hall","action":"raw","seconds":8}},
+  {"id":"lab-dashboard","text":"The lab dashboard needs only averaged values over the coming ten seconds.","expected":{"zone":"lab","action":"summary","seconds":10}},
+  {"id":"hall-plain","text":"For 4 seconds send only aggregate values from the hall.","expected":{"zone":"hall","action":"summary","seconds":4}},
+  {"id":"sample-trace","text":"Please preserve a sample-by-sample record from the lab for 12 seconds.","expected":{"zone":"lab","action":"raw","seconds":12}},
+  {"id":"averages-instead","text":"We can drop the individual hall readings for the next two seconds. Send a summary instead.","expected":{"zone":"hall","action":"summary","seconds":2}},
+  {"id":"audit-originals","text":"The audit requires the original values from the lab at their native resolution for eight seconds.","expected":{"zone":"lab","action":"raw","seconds":8}},
+  {"id":"hall-ramp","text":"For six seconds condense the hall readings into aggregate statistics while the temperature stabilizes.","expected":{"zone":"hall","action":"summary","seconds":6}},
+  {"id":"hall-missing-duration","text":"Please keep the individual measurements from the hall for the maintenance investigation.","expected":{"zone":"none","action":"none","seconds":0}},
+  {"id":"inspection-log","text":"Lab inspection lasted 6 seconds yesterday. The inspection is complete.","expected":{"zone":"none","action":"none","seconds":0}},
+  {"id":"missing-zone","text":"Save each reading for 6 seconds during the test.","expected":{"zone":"none","action":"none","seconds":0}},
+  {"id":"two-zones","text":"For 6 seconds send raw lab readings and a hall summary.","expected":{"zone":"none","action":"none","seconds":0}},
+  {"id":"long-hold","text":"Keep the raw lab readings for 60 seconds.","expected":{"zone":"none","action":"none","seconds":0}},
+  {"id":"no-action","text":"Hall probe replacement starts in six seconds.","expected":{"zone":"none","action":"none","seconds":0}},
+  {"id":"ambiguous","text":"We may want individual lab readings or a summary for four seconds. The team will decide later.","expected":{"zone":"none","action":"none","seconds":0}}
+]

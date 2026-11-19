@@ -1,0 +1,1064 @@
+[
+  {
+    "case": "warm-up",
+    "policy": "raw",
+    "seed": 17,
+    "trace_sha256": "1571182702c009b9ba272d38a221d912cd40909e8dcc1458f69cc5de7d6f2201",
+    "generated": 240,
+    "attempted": 240,
+    "ingress": 240,
+    "multihop_source_ids": [
+      4,
+      5,
+      6
+    ],
+    "generation_wall_span_s": 12.508,
+    "generation_sim_span_s": 12.5,
+    "datagrams": 240,
+    "udp_payload_bytes": 4560,
+    "ipv6_udp_bytes": 16080,
+    "summaries": 0,
+    "window_count": 0,
+    "routine_samples_at_receiver": 234,
+    "peak_readings_per_2s_window": 40,
+    "summary_max_delay_ms": null,
+    "alerts_on_time": 6,
+    "alerts": [
+      {
+        "node": 2,
+        "seq": 8,
+        "gateway_to_receiver_ms": 1.297,
+        "source_to_receiver_ms": 156.417,
+        "simulated_radio_ms": 154.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 16,
+        "gateway_to_receiver_ms": 0.947,
+        "source_to_receiver_ms": 37.307,
+        "simulated_radio_ms": 35.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 24,
+        "gateway_to_receiver_ms": 0.795,
+        "source_to_receiver_ms": 20.681,
+        "simulated_radio_ms": 19.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 32,
+        "gateway_to_receiver_ms": 0.784,
+        "source_to_receiver_ms": 42.328,
+        "simulated_radio_ms": 39.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 40,
+        "gateway_to_receiver_ms": 47.968,
+        "source_to_receiver_ms": 72.553,
+        "simulated_radio_ms": 23.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 6,
+        "seq": 36,
+        "gateway_to_receiver_ms": 0.81,
+        "source_to_receiver_ms": 83.563,
+        "simulated_radio_ms": 80.592,
+        "received_during_inference": false
+      }
+    ],
+    "alert_gateway_to_receiver_median_ms": 0.879,
+    "alert_source_to_receiver_max_ms": 156.417,
+    "inference_requests": 0,
+    "inference_fallbacks": 0,
+    "inference_median_ms": null,
+    "routine_arrivals_during_inference": 0,
+    "late_arrivals": 0,
+    "target_samples": 68,
+    "target_raw_at_receiver": 68,
+    "target_samples_in_summaries": 0,
+    "other_raw_at_receiver": 166
+  },
+  {
+    "case": "warm-up",
+    "policy": "fixed",
+    "seed": 17,
+    "trace_sha256": "1571182702c009b9ba272d38a221d912cd40909e8dcc1458f69cc5de7d6f2201",
+    "generated": 240,
+    "attempted": 240,
+    "ingress": 240,
+    "multihop_source_ids": [
+      4,
+      5,
+      6
+    ],
+    "generation_wall_span_s": 12.51,
+    "generation_sim_span_s": 12.5,
+    "datagrams": 20,
+    "udp_payload_bytes": 646,
+    "ipv6_udp_bytes": 1606,
+    "summaries": 14,
+    "window_count": 14,
+    "routine_samples_at_receiver": 234,
+    "peak_readings_per_2s_window": 40,
+    "summary_max_delay_ms": 1.626,
+    "alerts_on_time": 6,
+    "alerts": [
+      {
+        "node": 2,
+        "seq": 8,
+        "gateway_to_receiver_ms": 1.006,
+        "source_to_receiver_ms": 157.865,
+        "simulated_radio_ms": 154.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 16,
+        "gateway_to_receiver_ms": 0.571,
+        "source_to_receiver_ms": 37.606,
+        "simulated_radio_ms": 35.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 24,
+        "gateway_to_receiver_ms": 0.709,
+        "source_to_receiver_ms": 20.803,
+        "simulated_radio_ms": 19.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 32,
+        "gateway_to_receiver_ms": 0.841,
+        "source_to_receiver_ms": 42.347,
+        "simulated_radio_ms": 39.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 40,
+        "gateway_to_receiver_ms": 0.771,
+        "source_to_receiver_ms": 25.94,
+        "simulated_radio_ms": 23.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 6,
+        "seq": 36,
+        "gateway_to_receiver_ms": 0.651,
+        "source_to_receiver_ms": 82.23,
+        "simulated_radio_ms": 80.592,
+        "received_during_inference": false
+      }
+    ],
+    "alert_gateway_to_receiver_median_ms": 0.74,
+    "alert_source_to_receiver_max_ms": 157.865,
+    "inference_requests": 0,
+    "inference_fallbacks": 0,
+    "inference_median_ms": null,
+    "routine_arrivals_during_inference": 0,
+    "late_arrivals": 0,
+    "target_samples": 68,
+    "target_raw_at_receiver": 0,
+    "target_samples_in_summaries": 68,
+    "other_raw_at_receiver": 0
+  },
+  {
+    "case": "warm-up",
+    "policy": "rule",
+    "seed": 17,
+    "trace_sha256": "1571182702c009b9ba272d38a221d912cd40909e8dcc1458f69cc5de7d6f2201",
+    "generated": 240,
+    "attempted": 240,
+    "ingress": 240,
+    "multihop_source_ids": [
+      4,
+      5,
+      6
+    ],
+    "generation_wall_span_s": 12.51,
+    "generation_sim_span_s": 12.5,
+    "datagrams": 240,
+    "udp_payload_bytes": 4560,
+    "ipv6_udp_bytes": 16080,
+    "summaries": 0,
+    "window_count": 14,
+    "routine_samples_at_receiver": 234,
+    "peak_readings_per_2s_window": 40,
+    "summary_max_delay_ms": null,
+    "alerts_on_time": 6,
+    "alerts": [
+      {
+        "node": 2,
+        "seq": 8,
+        "gateway_to_receiver_ms": 0.88,
+        "source_to_receiver_ms": 156.179,
+        "simulated_radio_ms": 154.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 16,
+        "gateway_to_receiver_ms": 1.575,
+        "source_to_receiver_ms": 39.343,
+        "simulated_radio_ms": 35.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 24,
+        "gateway_to_receiver_ms": 0.73,
+        "source_to_receiver_ms": 22.076,
+        "simulated_radio_ms": 19.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 32,
+        "gateway_to_receiver_ms": 0.694,
+        "source_to_receiver_ms": 41.228,
+        "simulated_radio_ms": 39.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 40,
+        "gateway_to_receiver_ms": 0.824,
+        "source_to_receiver_ms": 25.905,
+        "simulated_radio_ms": 23.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 6,
+        "seq": 36,
+        "gateway_to_receiver_ms": 0.817,
+        "source_to_receiver_ms": 82.313,
+        "simulated_radio_ms": 80.592,
+        "received_during_inference": false
+      }
+    ],
+    "alert_gateway_to_receiver_median_ms": 0.821,
+    "alert_source_to_receiver_max_ms": 156.179,
+    "inference_requests": 0,
+    "inference_fallbacks": 0,
+    "inference_median_ms": null,
+    "routine_arrivals_during_inference": 0,
+    "late_arrivals": 0,
+    "target_samples": 68,
+    "target_raw_at_receiver": 68,
+    "target_samples_in_summaries": 0,
+    "other_raw_at_receiver": 166
+  },
+  {
+    "case": "warm-up",
+    "policy": "structured-context",
+    "seed": 17,
+    "trace_sha256": "1571182702c009b9ba272d38a221d912cd40909e8dcc1458f69cc5de7d6f2201",
+    "generated": 240,
+    "attempted": 240,
+    "ingress": 240,
+    "multihop_source_ids": [
+      4,
+      5,
+      6
+    ],
+    "generation_wall_span_s": 12.512,
+    "generation_sim_span_s": 12.5,
+    "datagrams": 21,
+    "udp_payload_bytes": 646,
+    "ipv6_udp_bytes": 1654,
+    "summaries": 13,
+    "window_count": 14,
+    "routine_samples_at_receiver": 234,
+    "peak_readings_per_2s_window": 40,
+    "summary_max_delay_ms": 1.636,
+    "alerts_on_time": 6,
+    "alerts": [
+      {
+        "node": 2,
+        "seq": 8,
+        "gateway_to_receiver_ms": 0.706,
+        "source_to_receiver_ms": 156.418,
+        "simulated_radio_ms": 154.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 16,
+        "gateway_to_receiver_ms": 0.565,
+        "source_to_receiver_ms": 36.034,
+        "simulated_radio_ms": 35.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 24,
+        "gateway_to_receiver_ms": 0.74,
+        "source_to_receiver_ms": 20.539,
+        "simulated_radio_ms": 19.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 32,
+        "gateway_to_receiver_ms": 0.778,
+        "source_to_receiver_ms": 41.804,
+        "simulated_radio_ms": 39.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 40,
+        "gateway_to_receiver_ms": 0.743,
+        "source_to_receiver_ms": 25.788,
+        "simulated_radio_ms": 23.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 6,
+        "seq": 36,
+        "gateway_to_receiver_ms": 0.688,
+        "source_to_receiver_ms": 81.453,
+        "simulated_radio_ms": 80.592,
+        "received_during_inference": false
+      }
+    ],
+    "alert_gateway_to_receiver_median_ms": 0.723,
+    "alert_source_to_receiver_max_ms": 156.418,
+    "inference_requests": 0,
+    "inference_fallbacks": 0,
+    "inference_median_ms": null,
+    "routine_arrivals_during_inference": 0,
+    "late_arrivals": 0,
+    "target_samples": 68,
+    "target_raw_at_receiver": 0,
+    "target_samples_in_summaries": 68,
+    "other_raw_at_receiver": 2,
+    "profile": {
+      "zone": "lab",
+      "action": "summary",
+      "duration_s": 6
+    }
+  },
+  {
+    "case": "warm-up",
+    "policy": "keyword-context",
+    "seed": 17,
+    "trace_sha256": "1571182702c009b9ba272d38a221d912cd40909e8dcc1458f69cc5de7d6f2201",
+    "generated": 240,
+    "attempted": 240,
+    "ingress": 240,
+    "multihop_source_ids": [
+      4,
+      5,
+      6
+    ],
+    "generation_wall_span_s": 12.508,
+    "generation_sim_span_s": 12.5,
+    "datagrams": 21,
+    "udp_payload_bytes": 646,
+    "ipv6_udp_bytes": 1654,
+    "summaries": 13,
+    "window_count": 14,
+    "routine_samples_at_receiver": 234,
+    "peak_readings_per_2s_window": 40,
+    "summary_max_delay_ms": 1.942,
+    "alerts_on_time": 6,
+    "alerts": [
+      {
+        "node": 2,
+        "seq": 8,
+        "gateway_to_receiver_ms": 1.304,
+        "source_to_receiver_ms": 157.142,
+        "simulated_radio_ms": 154.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 16,
+        "gateway_to_receiver_ms": 0.624,
+        "source_to_receiver_ms": 36.174,
+        "simulated_radio_ms": 35.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 24,
+        "gateway_to_receiver_ms": 0.764,
+        "source_to_receiver_ms": 20.877,
+        "simulated_radio_ms": 19.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 32,
+        "gateway_to_receiver_ms": 0.931,
+        "source_to_receiver_ms": 41.495,
+        "simulated_radio_ms": 39.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 40,
+        "gateway_to_receiver_ms": 0.707,
+        "source_to_receiver_ms": 26.124,
+        "simulated_radio_ms": 23.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 6,
+        "seq": 36,
+        "gateway_to_receiver_ms": 0.656,
+        "source_to_receiver_ms": 82.666,
+        "simulated_radio_ms": 80.592,
+        "received_during_inference": false
+      }
+    ],
+    "alert_gateway_to_receiver_median_ms": 0.736,
+    "alert_source_to_receiver_max_ms": 157.142,
+    "inference_requests": 0,
+    "inference_fallbacks": 0,
+    "inference_median_ms": null,
+    "routine_arrivals_during_inference": 0,
+    "late_arrivals": 0,
+    "target_samples": 68,
+    "target_raw_at_receiver": 0,
+    "target_samples_in_summaries": 68,
+    "other_raw_at_receiver": 2,
+    "profile": {
+      "zone": "lab",
+      "action": "summary",
+      "duration_s": 6
+    }
+  },
+  {
+    "case": "warm-up",
+    "policy": "slm-context",
+    "seed": 17,
+    "trace_sha256": "1571182702c009b9ba272d38a221d912cd40909e8dcc1458f69cc5de7d6f2201",
+    "generated": 240,
+    "attempted": 240,
+    "ingress": 240,
+    "multihop_source_ids": [
+      4,
+      5,
+      6
+    ],
+    "generation_wall_span_s": 12.509,
+    "generation_sim_span_s": 12.5,
+    "datagrams": 86,
+    "udp_payload_bytes": 1824,
+    "ipv6_udp_bytes": 5952,
+    "summaries": 10,
+    "window_count": 14,
+    "routine_samples_at_receiver": 234,
+    "peak_readings_per_2s_window": 40,
+    "summary_max_delay_ms": 2.852,
+    "alerts_on_time": 6,
+    "alerts": [
+      {
+        "node": 2,
+        "seq": 8,
+        "gateway_to_receiver_ms": 0.862,
+        "source_to_receiver_ms": 157.738,
+        "simulated_radio_ms": 154.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 16,
+        "gateway_to_receiver_ms": 0.804,
+        "source_to_receiver_ms": 37.766,
+        "simulated_radio_ms": 35.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 24,
+        "gateway_to_receiver_ms": 0.701,
+        "source_to_receiver_ms": 21.934,
+        "simulated_radio_ms": 19.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 32,
+        "gateway_to_receiver_ms": 1.434,
+        "source_to_receiver_ms": 43.962,
+        "simulated_radio_ms": 39.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 40,
+        "gateway_to_receiver_ms": 0.666,
+        "source_to_receiver_ms": 24.83,
+        "simulated_radio_ms": 23.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 6,
+        "seq": 36,
+        "gateway_to_receiver_ms": 0.774,
+        "source_to_receiver_ms": 83.289,
+        "simulated_radio_ms": 80.592,
+        "received_during_inference": false
+      }
+    ],
+    "alert_gateway_to_receiver_median_ms": 0.789,
+    "alert_source_to_receiver_max_ms": 157.738,
+    "inference_requests": 0,
+    "inference_fallbacks": 0,
+    "inference_median_ms": null,
+    "routine_arrivals_during_inference": 0,
+    "late_arrivals": 0,
+    "target_samples": 68,
+    "target_raw_at_receiver": 68,
+    "target_samples_in_summaries": 0,
+    "other_raw_at_receiver": 2,
+    "profile": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 6
+    }
+  },
+  {
+    "case": "inspection",
+    "policy": "raw",
+    "seed": 17,
+    "trace_sha256": "1571182702c009b9ba272d38a221d912cd40909e8dcc1458f69cc5de7d6f2201",
+    "generated": 240,
+    "attempted": 240,
+    "ingress": 240,
+    "multihop_source_ids": [
+      4,
+      5,
+      6
+    ],
+    "generation_wall_span_s": 12.508,
+    "generation_sim_span_s": 12.5,
+    "datagrams": 240,
+    "udp_payload_bytes": 4560,
+    "ipv6_udp_bytes": 16080,
+    "summaries": 0,
+    "window_count": 0,
+    "routine_samples_at_receiver": 234,
+    "peak_readings_per_2s_window": 40,
+    "summary_max_delay_ms": null,
+    "alerts_on_time": 6,
+    "alerts": [
+      {
+        "node": 2,
+        "seq": 8,
+        "gateway_to_receiver_ms": 1.297,
+        "source_to_receiver_ms": 156.417,
+        "simulated_radio_ms": 154.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 16,
+        "gateway_to_receiver_ms": 0.947,
+        "source_to_receiver_ms": 37.307,
+        "simulated_radio_ms": 35.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 24,
+        "gateway_to_receiver_ms": 0.795,
+        "source_to_receiver_ms": 20.681,
+        "simulated_radio_ms": 19.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 32,
+        "gateway_to_receiver_ms": 0.784,
+        "source_to_receiver_ms": 42.328,
+        "simulated_radio_ms": 39.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 40,
+        "gateway_to_receiver_ms": 47.968,
+        "source_to_receiver_ms": 72.553,
+        "simulated_radio_ms": 23.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 6,
+        "seq": 36,
+        "gateway_to_receiver_ms": 0.81,
+        "source_to_receiver_ms": 83.563,
+        "simulated_radio_ms": 80.592,
+        "received_during_inference": false
+      }
+    ],
+    "alert_gateway_to_receiver_median_ms": 0.879,
+    "alert_source_to_receiver_max_ms": 156.417,
+    "inference_requests": 0,
+    "inference_fallbacks": 0,
+    "inference_median_ms": null,
+    "routine_arrivals_during_inference": 0,
+    "late_arrivals": 0,
+    "target_samples": 68,
+    "target_raw_at_receiver": 68,
+    "target_samples_in_summaries": 0,
+    "other_raw_at_receiver": 166
+  },
+  {
+    "case": "inspection",
+    "policy": "fixed",
+    "seed": 17,
+    "trace_sha256": "1571182702c009b9ba272d38a221d912cd40909e8dcc1458f69cc5de7d6f2201",
+    "generated": 240,
+    "attempted": 240,
+    "ingress": 240,
+    "multihop_source_ids": [
+      4,
+      5,
+      6
+    ],
+    "generation_wall_span_s": 12.51,
+    "generation_sim_span_s": 12.5,
+    "datagrams": 20,
+    "udp_payload_bytes": 646,
+    "ipv6_udp_bytes": 1606,
+    "summaries": 14,
+    "window_count": 14,
+    "routine_samples_at_receiver": 234,
+    "peak_readings_per_2s_window": 40,
+    "summary_max_delay_ms": 1.626,
+    "alerts_on_time": 6,
+    "alerts": [
+      {
+        "node": 2,
+        "seq": 8,
+        "gateway_to_receiver_ms": 1.006,
+        "source_to_receiver_ms": 157.865,
+        "simulated_radio_ms": 154.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 16,
+        "gateway_to_receiver_ms": 0.571,
+        "source_to_receiver_ms": 37.606,
+        "simulated_radio_ms": 35.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 24,
+        "gateway_to_receiver_ms": 0.709,
+        "source_to_receiver_ms": 20.803,
+        "simulated_radio_ms": 19.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 32,
+        "gateway_to_receiver_ms": 0.841,
+        "source_to_receiver_ms": 42.347,
+        "simulated_radio_ms": 39.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 40,
+        "gateway_to_receiver_ms": 0.771,
+        "source_to_receiver_ms": 25.94,
+        "simulated_radio_ms": 23.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 6,
+        "seq": 36,
+        "gateway_to_receiver_ms": 0.651,
+        "source_to_receiver_ms": 82.23,
+        "simulated_radio_ms": 80.592,
+        "received_during_inference": false
+      }
+    ],
+    "alert_gateway_to_receiver_median_ms": 0.74,
+    "alert_source_to_receiver_max_ms": 157.865,
+    "inference_requests": 0,
+    "inference_fallbacks": 0,
+    "inference_median_ms": null,
+    "routine_arrivals_during_inference": 0,
+    "late_arrivals": 0,
+    "target_samples": 68,
+    "target_raw_at_receiver": 0,
+    "target_samples_in_summaries": 68,
+    "other_raw_at_receiver": 0
+  },
+  {
+    "case": "inspection",
+    "policy": "rule",
+    "seed": 17,
+    "trace_sha256": "1571182702c009b9ba272d38a221d912cd40909e8dcc1458f69cc5de7d6f2201",
+    "generated": 240,
+    "attempted": 240,
+    "ingress": 240,
+    "multihop_source_ids": [
+      4,
+      5,
+      6
+    ],
+    "generation_wall_span_s": 12.51,
+    "generation_sim_span_s": 12.5,
+    "datagrams": 240,
+    "udp_payload_bytes": 4560,
+    "ipv6_udp_bytes": 16080,
+    "summaries": 0,
+    "window_count": 14,
+    "routine_samples_at_receiver": 234,
+    "peak_readings_per_2s_window": 40,
+    "summary_max_delay_ms": null,
+    "alerts_on_time": 6,
+    "alerts": [
+      {
+        "node": 2,
+        "seq": 8,
+        "gateway_to_receiver_ms": 0.88,
+        "source_to_receiver_ms": 156.179,
+        "simulated_radio_ms": 154.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 16,
+        "gateway_to_receiver_ms": 1.575,
+        "source_to_receiver_ms": 39.343,
+        "simulated_radio_ms": 35.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 24,
+        "gateway_to_receiver_ms": 0.73,
+        "source_to_receiver_ms": 22.076,
+        "simulated_radio_ms": 19.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 32,
+        "gateway_to_receiver_ms": 0.694,
+        "source_to_receiver_ms": 41.228,
+        "simulated_radio_ms": 39.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 40,
+        "gateway_to_receiver_ms": 0.824,
+        "source_to_receiver_ms": 25.905,
+        "simulated_radio_ms": 23.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 6,
+        "seq": 36,
+        "gateway_to_receiver_ms": 0.817,
+        "source_to_receiver_ms": 82.313,
+        "simulated_radio_ms": 80.592,
+        "received_during_inference": false
+      }
+    ],
+    "alert_gateway_to_receiver_median_ms": 0.821,
+    "alert_source_to_receiver_max_ms": 156.179,
+    "inference_requests": 0,
+    "inference_fallbacks": 0,
+    "inference_median_ms": null,
+    "routine_arrivals_during_inference": 0,
+    "late_arrivals": 0,
+    "target_samples": 68,
+    "target_raw_at_receiver": 68,
+    "target_samples_in_summaries": 0,
+    "other_raw_at_receiver": 166
+  },
+  {
+    "case": "inspection",
+    "policy": "structured-context",
+    "seed": 17,
+    "trace_sha256": "1571182702c009b9ba272d38a221d912cd40909e8dcc1458f69cc5de7d6f2201",
+    "generated": 240,
+    "attempted": 240,
+    "ingress": 240,
+    "multihop_source_ids": [
+      4,
+      5,
+      6
+    ],
+    "generation_wall_span_s": 12.51,
+    "generation_sim_span_s": 12.5,
+    "datagrams": 86,
+    "udp_payload_bytes": 1824,
+    "ipv6_udp_bytes": 5952,
+    "summaries": 10,
+    "window_count": 14,
+    "routine_samples_at_receiver": 234,
+    "peak_readings_per_2s_window": 40,
+    "summary_max_delay_ms": 1.584,
+    "alerts_on_time": 6,
+    "alerts": [
+      {
+        "node": 2,
+        "seq": 8,
+        "gateway_to_receiver_ms": 0.953,
+        "source_to_receiver_ms": 156.93,
+        "simulated_radio_ms": 154.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 16,
+        "gateway_to_receiver_ms": 0.533,
+        "source_to_receiver_ms": 37.821,
+        "simulated_radio_ms": 35.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 24,
+        "gateway_to_receiver_ms": 0.597,
+        "source_to_receiver_ms": 21.623,
+        "simulated_radio_ms": 19.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 32,
+        "gateway_to_receiver_ms": 0.962,
+        "source_to_receiver_ms": 41.483,
+        "simulated_radio_ms": 39.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 40,
+        "gateway_to_receiver_ms": 1.117,
+        "source_to_receiver_ms": 25.103,
+        "simulated_radio_ms": 23.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 6,
+        "seq": 36,
+        "gateway_to_receiver_ms": 0.748,
+        "source_to_receiver_ms": 82.736,
+        "simulated_radio_ms": 80.592,
+        "received_during_inference": false
+      }
+    ],
+    "alert_gateway_to_receiver_median_ms": 0.851,
+    "alert_source_to_receiver_max_ms": 156.93,
+    "inference_requests": 0,
+    "inference_fallbacks": 0,
+    "inference_median_ms": null,
+    "routine_arrivals_during_inference": 0,
+    "late_arrivals": 0,
+    "target_samples": 68,
+    "target_raw_at_receiver": 68,
+    "target_samples_in_summaries": 0,
+    "other_raw_at_receiver": 2,
+    "profile": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 6
+    }
+  },
+  {
+    "case": "inspection",
+    "policy": "keyword-context",
+    "seed": 17,
+    "trace_sha256": "1571182702c009b9ba272d38a221d912cd40909e8dcc1458f69cc5de7d6f2201",
+    "generated": 240,
+    "attempted": 240,
+    "ingress": 240,
+    "multihop_source_ids": [
+      4,
+      5,
+      6
+    ],
+    "generation_wall_span_s": 12.512,
+    "generation_sim_span_s": 12.5,
+    "datagrams": 86,
+    "udp_payload_bytes": 1824,
+    "ipv6_udp_bytes": 5952,
+    "summaries": 10,
+    "window_count": 14,
+    "routine_samples_at_receiver": 234,
+    "peak_readings_per_2s_window": 40,
+    "summary_max_delay_ms": 1.611,
+    "alerts_on_time": 6,
+    "alerts": [
+      {
+        "node": 2,
+        "seq": 8,
+        "gateway_to_receiver_ms": 1.002,
+        "source_to_receiver_ms": 157.223,
+        "simulated_radio_ms": 154.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 16,
+        "gateway_to_receiver_ms": 0.817,
+        "source_to_receiver_ms": 36.799,
+        "simulated_radio_ms": 35.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 24,
+        "gateway_to_receiver_ms": 0.763,
+        "source_to_receiver_ms": 20.847,
+        "simulated_radio_ms": 19.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 32,
+        "gateway_to_receiver_ms": 0.943,
+        "source_to_receiver_ms": 41.749,
+        "simulated_radio_ms": 39.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 40,
+        "gateway_to_receiver_ms": 0.879,
+        "source_to_receiver_ms": 25.632,
+        "simulated_radio_ms": 23.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 6,
+        "seq": 36,
+        "gateway_to_receiver_ms": 0.803,
+        "source_to_receiver_ms": 83.772,
+        "simulated_radio_ms": 80.592,
+        "received_during_inference": false
+      }
+    ],
+    "alert_gateway_to_receiver_median_ms": 0.848,
+    "alert_source_to_receiver_max_ms": 157.223,
+    "inference_requests": 0,
+    "inference_fallbacks": 0,
+    "inference_median_ms": null,
+    "routine_arrivals_during_inference": 0,
+    "late_arrivals": 0,
+    "target_samples": 68,
+    "target_raw_at_receiver": 68,
+    "target_samples_in_summaries": 0,
+    "other_raw_at_receiver": 2,
+    "profile": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 6
+    }
+  },
+  {
+    "case": "inspection",
+    "policy": "slm-context",
+    "seed": 17,
+    "trace_sha256": "1571182702c009b9ba272d38a221d912cd40909e8dcc1458f69cc5de7d6f2201",
+    "generated": 240,
+    "attempted": 240,
+    "ingress": 240,
+    "multihop_source_ids": [
+      4,
+      5,
+      6
+    ],
+    "generation_wall_span_s": 12.512,
+    "generation_sim_span_s": 12.5,
+    "datagrams": 86,
+    "udp_payload_bytes": 1824,
+    "ipv6_udp_bytes": 5952,
+    "summaries": 10,
+    "window_count": 14,
+    "routine_samples_at_receiver": 234,
+    "peak_readings_per_2s_window": 40,
+    "summary_max_delay_ms": 2.151,
+    "alerts_on_time": 6,
+    "alerts": [
+      {
+        "node": 2,
+        "seq": 8,
+        "gateway_to_receiver_ms": 0.812,
+        "source_to_receiver_ms": 156.89,
+        "simulated_radio_ms": 154.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 16,
+        "gateway_to_receiver_ms": 0.621,
+        "source_to_receiver_ms": 37.134,
+        "simulated_radio_ms": 35.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 24,
+        "gateway_to_receiver_ms": 0.717,
+        "source_to_receiver_ms": 20.578,
+        "simulated_radio_ms": 19.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 32,
+        "gateway_to_receiver_ms": 0.945,
+        "source_to_receiver_ms": 41.87,
+        "simulated_radio_ms": 39.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 2,
+        "seq": 40,
+        "gateway_to_receiver_ms": 0.93,
+        "source_to_receiver_ms": 25.701,
+        "simulated_radio_ms": 23.304,
+        "received_during_inference": false
+      },
+      {
+        "node": 6,
+        "seq": 36,
+        "gateway_to_receiver_ms": 0.76,
+        "source_to_receiver_ms": 83.165,
+        "simulated_radio_ms": 80.592,
+        "received_during_inference": false
+      }
+    ],
+    "alert_gateway_to_receiver_median_ms": 0.786,
+    "alert_source_to_receiver_max_ms": 156.89,
+    "inference_requests": 0,
+    "inference_fallbacks": 0,
+    "inference_median_ms": null,
+    "routine_arrivals_during_inference": 0,
+    "late_arrivals": 0,
+    "target_samples": 68,
+    "target_raw_at_receiver": 68,
+    "target_samples_in_summaries": 0,
+    "other_raw_at_receiver": 2,
+    "profile": {
+      "zone": "lab",
+      "action": "raw",
+      "duration_s": 6
+    }
+  }
+]

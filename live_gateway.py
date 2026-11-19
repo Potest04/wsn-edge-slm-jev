@@ -11,13 +11,14 @@ import socket
 import time
 
 from cooja import MARKER
-from edge import RAW, SUMMARY, RawCache, Reading, ambiguous, choose, pack_summary, window_features
+from edge import RAW, SUMMARY, Decision, RawCache, Reading, ambiguous, choose, pack_summary, window_features
 
 
 WINDOW_MS = 2000
 MAX_LINE_BYTES = 512
 END = b"\x00"
 POLICIES = ("fixed", "jev-heuristic", "jev-gated")
+CONTEXT_POLICIES = ("structured-context", "keyword-context", "slm-context")
 
 
 @dataclass(frozen=True)
@@ -35,15 +36,17 @@ def log(handle, event, **fields):
 
 
 class LiveGateway:
-    def __init__(self, policy, receiver_port, audit, scorer=None):
+    def __init__(self, policy, receiver_port, audit, scorer=None, profile=None, effective_ms=0):
         if policy == "jev-gated" and scorer is None:
             raise ValueError("Gated JEV requires a model scorer")
         self.policy = policy
         self.receiver_port = receiver_port
         self.audit = audit
         self.scorer = scorer
+        self.profile = profile
+        self.effective_ms = effective_ms
         self.udp = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
-        self.cache = RawCache(capacity=20, ttl=75, priority=policy.startswith("jev-"))
+        self.cache = RawCache(capacity=20, ttl=75, priority=policy.startswith("jev-") or policy in CONTEXT_POLICIES)
         self.windows = defaultdict(list)
         self.generated = {}
         self.received = set()
@@ -89,6 +92,10 @@ class LiveGateway:
             collector_wall_ms=wall_ms, start_ms=start_ms, zone=zone, ingress_ns=ingress_ns)
         if reading.hard_alert:
             self.emit(reading.encode(), "alert", node=node, seq=seq)
+        elif self.policy == "raw":
+            self.emit(reading.encode(), "raw", node=node, seq=seq)
+        if self.policy == "raw":
+            return
         self.cache.add(reading, reading.arrival_s)
         if start_ms >= self.closed_through:
             self.windows[(start_ms, zone)].append(reading)
@@ -112,6 +119,14 @@ class LiveGateway:
     def decide(self, window, features, policy):
         count = sum(not r.hard_alert for r in window.readings)
         case = f"live/{window.start_ms}/{window.zone}"
+        if policy in CONTEXT_POLICIES:
+            profile = self.profile
+            if (count and profile and window.zone == profile.zone and
+                    self.effective_ms <= window.start_ms < self.effective_ms + 1000 * profile.duration_s):
+                # The operator's validated retention requirement constrains this window's action.
+                action, value = ("forward", 1) if profile.action == "raw" else ("summary", 0)
+                return Decision(action, value, policy, 0.0)
+            policy = "jev-heuristic"
         return choose(policy, features, None, count, self.scorer, case, 0.18)
 
     async def inference_worker(self):

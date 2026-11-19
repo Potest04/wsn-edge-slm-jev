@@ -16,7 +16,7 @@ import tempfile
 from benchmark import digest, wait_server
 from cooja import config, parse
 from edge import ALERT_DEADLINE_S, IPV6_UDP_BYTES, ZONE_ID, load_trace
-from live_gateway import LiveGateway, MAX_LINE_BYTES, POLICIES, WINDOW_MS
+from live_gateway import CONTEXT_POLICIES, LiveGateway, MAX_LINE_BYTES, POLICIES, WINDOW_MS
 from semantic import LocalScorer
 
 
@@ -54,6 +54,12 @@ def validate(trial, policy):
         raise ValueError(f"Missing hard alerts: {sorted(alerts.keys() - raw.keys())}")
     if len(raw) != sum(row["kind"] == "raw" for row in wire):
         raise ValueError("Duplicate raw delivery")
+    trace_by_key = {r.key: r for r in trace if r.arrival_s is not None}
+    if not raw.keys() <= trace_by_key.keys() or any(
+            row["payload"] != trace_by_key[key].encode().hex() for key, row in raw.items()):
+        raise ValueError("Incorrect raw telemetry at the receiver")
+    if policy == "raw" and raw.keys() != trace_by_key.keys():
+        raise ValueError("Raw baseline failed to forward an ingress reading")
 
     alert_results = []
     for key, reading in sorted(alerts.items()):
@@ -77,7 +83,13 @@ def validate(trial, policy):
     summaries = [r for r in wire if r["kind"] == "summary"]
     summary_sends = {row["payload"]: row for row in sent if row["kind"] == "summary"}
     windows = [r for r in gateway if r["event"] == "window"]
-    if not summaries or not windows:
+    if policy == "raw":
+        if summaries or windows:
+            raise ValueError("Raw forwarding unexpectedly used windows")
+    elif not windows or len(summaries) != sum(
+            r["event"] == "decision" and r["action"] == "summary" for r in gateway):
+        raise ValueError("Window decisions and received summary count differ")
+    if policy in POLICIES and not summaries:
         raise ValueError("No ordinary readings arrived in an upstream summary")
     if len(summary_sends) != len(summaries):
         raise ValueError("Duplicate summary delivery")
@@ -124,7 +136,7 @@ def validate(trial, policy):
         "summaries": len(summaries), "window_count": len(windows),
         "routine_samples_at_receiver": sum(r["count"] for r in summaries) + len(raw) - len(alerts),
         "peak_readings_per_2s_window": max(Counter(r["start_ms"] for r in ingress.values()).values()),
-        "summary_max_delay_ms": round(max(summary_delays), 3),
+        "summary_max_delay_ms": round(max(summary_delays), 3) if summary_delays else None,
         "alerts_on_time": len(alert_results), "alerts": alert_results,
         "alert_gateway_to_receiver_median_ms": round(median(r["gateway_to_receiver_ms"] for r in alert_results), 3),
         "alert_source_to_receiver_max_ms": max(r["source_to_receiver_ms"] for r in alert_results),
@@ -147,7 +159,7 @@ async def stop(process):
             await process.wait()
 
 
-async def run_trial(trial, contiki, seed, policy, scorer, java_home):
+async def run_trial(trial, contiki, seed, policy, scorer, java_home, *, profile=None, effective_ms=0):
     trial.mkdir()
     with tempfile.TemporaryDirectory(prefix="wsn-live-") as temp, (
         trial / "gateway.jsonl"
@@ -191,7 +203,7 @@ async def run_trial(trial, contiki, seed, policy, scorer, java_home):
                     raise RuntimeError(f"Cooja exited before connection. Inspect {trial / 'cooja.log'}")
                 reader, writer = connected.result()
                 try:
-                    gateway = LiveGateway(policy, receiver_port, audit, scorer)
+                    gateway = LiveGateway(policy, receiver_port, audit, scorer, profile, effective_ms)
                     await asyncio.wait_for(gateway.run(reader), 40)
                 finally:
                     writer.close()
@@ -215,7 +227,7 @@ async def run_trial(trial, contiki, seed, policy, scorer, java_home):
 
 @contextmanager
 def model_server(args):
-    if "jev-gated" not in args.policies:
+    if not {"jev-gated", "slm-context"}.intersection(args.policies):
         yield
         return
     with (args.out / "llama-server.log").open("wb") as log, subprocess.Popen([
@@ -265,7 +277,7 @@ if __name__ == "__main__":
     parser.add_argument("--model-port", type=int, default=8091)
     parser.add_argument("--seed", type=int, default=17)
     parser.add_argument("--repeats", type=int, default=1)
-    parser.add_argument("--policies", choices=POLICIES, nargs="+", default=POLICIES)
+    parser.add_argument("--policies", choices=(*POLICIES, "raw", "rule"), nargs="+", default=POLICIES)
     args = parser.parse_args()
     if args.repeats < 1 or len(set(args.policies)) != len(args.policies):
         parser.error("Use positive repeats and unique policies")
